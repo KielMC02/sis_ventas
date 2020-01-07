@@ -98,10 +98,49 @@ namespace Sistema.Datos
                 //En caso de que la conexion este abierta sera cerrada
                 if (Sqlcon.State == ConnectionState.Open) Sqlcon.Close();
             }
-
-
-
         }
+
+        //El Metodo Existe de la Clase DCategoria, se encarga de evitar que no existan categorias con el mismo nombre
+        public string Existe(string valor)
+        {
+            //Declaramos una variable de tipo String Vacia
+            string Rpta = "";
+            //Declaramos una variable de tipo Sqlconnection
+            SqlConnection Sqlcon = new SqlConnection();
+            try
+            {
+                //Como la clase y el metodo de la conexion son privados entonces hay que llamar primero al metodo publico "getInstance", junto con el metodo de la conexion  "CrearConexion".
+                Sqlcon = Conexion.getInstance().CrearConexion();
+                //Utilizamos una variable de Tipo SqlCommand "Comando" la cual recibe el objeto la que haremos referencia en nuestra base de datos en este caso  es un StoredProcedure(Procediiento de almacenado) y tambien recibe la conexiona a la base de datos en este caso esa en "Sqlcon".
+                //La Clase SqlCommando representa una instruccion o una Transaccion SQL.
+                SqlCommand Comando = new SqlCommand("categoria_existe", Sqlcon);
+                //Ejecutamos el metodo ComandType de la variable comando para indicarle que ba ejecutar un Procedimiento de Almacenado
+                Comando.CommandType = CommandType.StoredProcedure;
+                //Le enviamos los valores que esta esperando el Procedimiento de almacenado en la base de datos.
+                Comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = valor;
+                SqlParameter ParExiste = new SqlParameter();
+                ParExiste.SqlDbType = SqlDbType.Int;
+                ParExiste.Direction = ParameterDirection.Output;
+                Comando.Parameters.Add(ParExiste);
+                //Abrimos la Conexion
+                Sqlcon.Open();
+                //Si todo se ejecuta de forma correcta devuelve un OK en caso de que no "No se pudo guardar el registro"
+                Comando.ExecuteNonQuery();
+                Rpta = Convert.ToString(ParExiste.Value);
+            }
+            catch (Exception ex)
+            {
+                Rpta = ex.Message;
+            }
+            finally
+            {
+                //En caso de que la conexion este abierta sera cerrada
+                if (Sqlcon.State == ConnectionState.Open) Sqlcon.Close();
+
+            }
+            return Rpta;
+        }
+
         //
         public string Insertar(Categoria Obj)
         {
@@ -177,7 +216,7 @@ namespace Sistema.Datos
 
         }
 
-        public string Elimiar(int id)
+        public string Eliminar(int id)
         {
             //Declaramos una variable de tipo String Vacia
             string Rpta = "";
@@ -225,7 +264,7 @@ namespace Sistema.Datos
                 Sqlcon = Conexion.getInstance().CrearConexion();
                 //Utilizamos una variable de Tipo SqlCommand "Comando" la cual recibe el objeto la que haremos referencia en nuestra base de datos en este caso  es un StoredProcedure(Procediiento de almacenado) y tambien recibe la conexiona a la base de datos en este caso esa en "Sqlcon".
                 //La Clase SqlCommando representa una instruccion o una Transaccion SQL.
-                SqlCommand Comando = new SqlCommand("categoria_eliminar", Sqlcon);
+                SqlCommand Comando = new SqlCommand("categoria_activar", Sqlcon);
                 //Ejecutamos el metodo ComandType de la variable comando para indicarle que ba ejecutar un Procedimiento de Almacenado
                 Comando.CommandType = CommandType.StoredProcedure;
                 //Le enviamos los valores que esta esperando el Procedimiento de almacenado en la base de datos.
@@ -262,7 +301,7 @@ namespace Sistema.Datos
                 Sqlcon = Conexion.getInstance().CrearConexion();
                 //Utilizamos una variable de Tipo SqlCommand "Comando" la cual recibe el objeto la que haremos referencia en nuestra base de datos en este caso  es un StoredProcedure(Procediiento de almacenado) y tambien recibe la conexiona a la base de datos en este caso esa en "Sqlcon".
                 //La Clase SqlCommando representa una instruccion o una Transaccion SQL.
-                SqlCommand Comando = new SqlCommand("categoria_eliminar", Sqlcon);
+                SqlCommand Comando = new SqlCommand("categoria_desactivar", Sqlcon);
                 //Ejecutamos el metodo ComandType de la variable comando para indicarle que ba ejecutar un Procedimiento de Almacenado
                 Comando.CommandType = CommandType.StoredProcedure;
                 //Le enviamos los valores que esta esperando el Procedimiento de almacenado en la base de datos.
