@@ -1,0 +1,9 @@
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\bin\Debug\Sistema.Datos.dll
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\bin\Debug\Sistema.Datos.pdb
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\bin\Debug\Sistema.Entidades.dll
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\bin\Debug\Sistema.Entidades.pdb
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.csprojAssemblyReference.cache
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CoreCompileInputs.cache
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CopyComplete
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.dll
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.pdb

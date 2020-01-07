@@ -70,3 +70,20 @@ as
 update categoria set estado=1
 where idcategoria = @idcategoria
 go
+
+
+/*Este procedimiento se encarga si una categoria existe a partir de su nombre, en xaso de que no exista nos retorna 0 o 1*/
+create proc categoria_existe
+@valor varchar(100),
+@existe bit output
+as
+/*Estructura condicional que verifica si la categoria existe, se utiliza ltrim & rtrim para limpiar los espacios de la cariable
+	valor*/
+	if exists(select nombre from categoria where nombre = ltrim(rtrim(@valor)))
+		begin
+			set @existe = 1
+		end
+	else
+		begin
+			set @existe = 0
+		end
