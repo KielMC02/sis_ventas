@@ -119,6 +119,7 @@ namespace Sistema.Datos
                 //Le enviamos los valores que esta esperando el Procedimiento de almacenado en la base de datos.
                 Comando.Parameters.Add("@valor", SqlDbType.VarChar).Value = valor;
                 SqlParameter ParExiste = new SqlParameter();
+                ParExiste.ParameterName = "@existe";
                 ParExiste.SqlDbType = SqlDbType.Int;
                 ParExiste.Direction = ParameterDirection.Output;
                 Comando.Parameters.Add(ParExiste);
