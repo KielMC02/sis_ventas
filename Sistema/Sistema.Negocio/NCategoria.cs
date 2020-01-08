@@ -47,23 +47,40 @@ namespace Sistema.Negocio
 
         }
 
-        public static String Actualizar(int id, string Nombre, string Descripcion)
+        public static String Actualizar(int id,string NombreAnt, string Nombre, string Descripcion)
         {
             //Llamamos el metodo Actualizar de la clase Dcategorias y le enviamos los parametros que espera
             DCaregoria Datos = new DCaregoria();
-            string Existe = Datos.Existe(Nombre);
-            if (Existe.Equals("1"))
+            Categoria Obj = new Categoria();
+
+            //Si la variable nombre anterior es igual al string nombre, entonces el usuario modifico los otros campos menos el nombre
+            if(NombreAnt.Equals(Nombre))
             {
-                return "Ya existe una Categoria con este nombre";
-            }
-            else
-            {
-                Categoria Obj = new Categoria();
                 Obj.idcategoria = id;
                 Obj.nombre = Nombre;
                 Obj.descripcion = Descripcion;
                 return Datos.Actualizar(Obj);
+
             }
+            else
+            {
+                //Validamos que no exista una categoria con el mismo nombre
+                string Existe = Datos.Existe(Nombre);
+                if (Existe.Equals("1"))
+                {
+                    return "Ya existe una Categoria con este nombre";
+                }
+                else
+                {
+
+                    Obj.idcategoria = id;
+                    Obj.nombre = Nombre;
+                    Obj.descripcion = Descripcion;
+                    return Datos.Actualizar(Obj);
+                }
+
+            }
+
         }
 
         public static String Eliminar(int id)
