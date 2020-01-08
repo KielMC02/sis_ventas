@@ -80,6 +80,13 @@ namespace Sistema.Presentacion
             BtnInsertar.Visible = true;
             BtnActualizar.Visible = false;
             Erroricono.Clear();
+
+            //Limpiar para seleccionar
+            DgvListado.Columns[0].Visible = false;
+            BtnActivar.Visible = false;
+            BtnDesactivar.Visible = false;
+            BtnEliminar.Visible = false;
+            ChkSeleccionar.Checked = false;
         }
 
         //Muestra un mensaje de error
@@ -152,6 +159,7 @@ namespace Sistema.Presentacion
 
         private void DgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            try { 
             this.Limpiar();
             //Deshabilitamos el boton insertar y habilitamos el Actulizar
             BtnActualizar.Visible = true;
@@ -164,6 +172,11 @@ namespace Sistema.Presentacion
             TxtDescripcion.Text= Convert.ToString(DgvListado.CurrentRow.Cells["Descripcion"].Value);
             //Pasamos automaticamente a la pestana mantenimiento
             TabGeneral.SelectedIndex = 1;
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Seleccione desde la celda nombre");
+            }
         }
 
         private void BtnActualizar_Click(object sender, EventArgs e)
@@ -200,6 +213,83 @@ namespace Sistema.Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void ChkSeleccionar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ChkSeleccionar.Checked)
+            {
+                DgvListado.Columns[0].Visible = true;
+                BtnActivar.Visible = true;
+                BtnDesactivar.Visible = true;
+                BtnEliminar.Visible = true;
+            }
+            else
+            {
+                DgvListado.Columns[0].Visible = false;
+                BtnActivar.Visible = false;
+                BtnDesactivar.Visible = false;
+                BtnEliminar.Visible = false;
+
+            }
+        }
+
+        private void DgvListado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Utilizamos el objeto "e" que recibe el metodo para obtener la columna seleccionar
+            if (e.ColumnIndex == DgvListado.Columns["Seleccionar"].Index)
+            {
+                //NO ENTIENDO ESTE CODIGO
+                DataGridViewCheckBoxCell ChkEliminar = (DataGridViewCheckBoxCell)DgvListado.Rows[e.RowIndex].Cells["Seleccionar"];
+                ChkEliminar.Value = !Convert.ToBoolean(ChkEliminar.Value);
+            }
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Creamos un mensaje de dailogo con las opciones necesarias
+                DialogResult Opcion;
+                //Mostramos el mensaje  y establecemos la opciones OK(para continuar)- Cancel(Para Cancelar), establecemos que es de tipo Cuestion
+                Opcion = MessageBox.Show("Realmente deseas eliminar el(los) registro?", "Sistema de Eventos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //Si la Opcion es OK
+                if (Opcion == DialogResult.OK)
+                {
+                    
+                    int codigo;
+                    string Rpta = "";
+                    //Creamos un foreach que va recorrer todas las filas seleccionadas
+                    foreach (DataGridViewRow row in DgvListado.Rows)
+                    {
+                        //Convertimos a Booleanos el valor de la casilla seleccionar
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            //Tomamos el ID y ese es el parametro que le enviaremos a nuestro metodo Eliminar.
+                            codigo = Convert.ToInt32(row.Cells[1].Value);
+                            Rpta = NCategoria.Eliminar(codigo);
+                            //Si la respuesta es satisfactora (OK) entonces se mostrara un mensaje de informacion
+                            if (Rpta.Equals("OK"))
+                            {
+                                this.MensajeOK("Se elimino el Registro" + Convert.ToString(row.Cells[2].Value));
+                            }
+                            //En caso de que no mostrar el error.
+                            else
+                            {
+                                this.MensajeError(Rpta);
+                            }
+                        }
+
+                    }
+                    //Volvemos al listado.
+                    this.Listar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
         }
     }
 }
