@@ -156,7 +156,7 @@ namespace Sistema.Presentacion
             TabGeneral.SelectedIndex = 0;
    
         }
-
+        //Metodo para el doble clic de una fila del datagrid
         private void DgvListado_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try { 
@@ -291,5 +291,102 @@ namespace Sistema.Presentacion
             }
 
         }
+
+        private void BtnActivar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                //Creamos un mensaje de dailogo con las opciones necesarias
+                DialogResult Opcion;
+                //Mostramos el mensaje  y establecemos la opciones OK(para continuar)- Cancel(Para Cancelar), establecemos que es de tipo Cuestion
+                Opcion = MessageBox.Show("Realmente deseas Activar el(los) registro?", "Sistema de Eventos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //Si la Opcion es OK
+                if (Opcion == DialogResult.OK)
+                {
+
+                    int codigo;
+                    string Rpta = "";
+                    //Creamos un foreach que va recorrer todas las filas seleccionadas
+                    foreach (DataGridViewRow row in DgvListado.Rows)
+                    {
+                        //Convertimos a Booleanos el valor de la casilla seleccionar
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            //Tomamos el ID y ese es el parametro que le enviaremos a nuestro metodo Activar.
+                            codigo = Convert.ToInt32(row.Cells[1].Value);
+                            Rpta = NCategoria.Activar(codigo);
+                            //Si la respuesta es satisfactora (OK) entonces se mostrara un mensaje de informacion
+                            if (Rpta.Equals("OK"))
+                            {
+                                this.MensajeOK("Se Activo el Registro" + Convert.ToString(row.Cells[2].Value));
+                            }
+                            //En caso de que no mostrar el error.
+                            else
+                            {
+                                this.MensajeError(Rpta);
+                            }
+                        }
+
+                    }
+                    //Volvemos al listado.
+                    this.Listar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+
+            }
+        }
+
+        private void BtnDesactivar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Creamos un mensaje de dailogo con las opciones necesarias
+                DialogResult Opcion;
+                //Mostramos el mensaje  y establecemos la opciones OK(para continuar)- Cancel(Para Cancelar), establecemos que es de tipo Cuestion
+                Opcion = MessageBox.Show("Realmente deseas Desactivar el(los) registro?", "Sistema de Eventos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //Si la Opcion es OK
+                if (Opcion == DialogResult.OK)
+                {
+
+                    int codigo;
+                    string Rpta = "";
+                    //Creamos un foreach que va recorrer todas las filas seleccionadas
+                    foreach (DataGridViewRow row in DgvListado.Rows)
+                    {
+                        //Convertimos a Booleanos el valor de la casilla seleccionar
+                        if (Convert.ToBoolean(row.Cells[0].Value))
+                        {
+                            //Tomamos el ID y ese es el parametro que le enviaremos a nuestro metodo Activar.
+                            codigo = Convert.ToInt32(row.Cells[1].Value);
+                            Rpta = NCategoria.Desactivar(codigo);
+                            //Si la respuesta es satisfactora (OK) entonces se mostrara un mensaje de informacion
+                            if (Rpta.Equals("OK"))
+                            {
+                                this.MensajeOK("Se Desactivar el Registro" + Convert.ToString(row.Cells[2].Value));
+                            }
+                            //En caso de que no mostrar el error.
+                            else
+                            {
+                                this.MensajeError(Rpta);
+                            }
+                        }
+
+                    }
+                    //Volvemos al listado.
+                    this.Listar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+
+            }
+        }
+
     }
+    
 }

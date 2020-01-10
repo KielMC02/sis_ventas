@@ -257,6 +257,7 @@
             this.BtnActivar.TabIndex = 5;
             this.BtnActivar.Text = "Activar";
             this.BtnActivar.UseVisualStyleBackColor = true;
+            this.BtnActivar.Click += new System.EventHandler(this.BtnActivar_Click);
             // 
             // BtnDesactivar
             // 
@@ -266,6 +267,7 @@
             this.BtnDesactivar.TabIndex = 6;
             this.BtnDesactivar.Text = "Desactivar";
             this.BtnDesactivar.UseVisualStyleBackColor = true;
+            this.BtnDesactivar.Click += new System.EventHandler(this.BtnDesactivar_Click);
             // 
             // BtnEliminar
             // 
