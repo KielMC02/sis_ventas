@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Sistema.Datos
 {
-    class DArticulo
+    public class DArticulo
     {
 
         //Esta funcion nos va devolver un objeto de tipo datatable ya que mostrata los datos de una tabla
