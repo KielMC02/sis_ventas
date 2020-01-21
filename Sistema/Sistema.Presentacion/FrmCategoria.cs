@@ -267,7 +267,7 @@ namespace Sistema.Presentacion
                         {
                             //Tomamos el ID y ese es el parametro que le enviaremos a nuestro metodo Eliminar.
                             codigo = Convert.ToInt32(row.Cells[1].Value);
-                            Rpta = NCategoria.Eliminar(codigo);
+                            Rpta = NArticulo.Eliminar(codigo);
                             //Si la respuesta es satisfactora (OK) entonces se mostrara un mensaje de informacion
                             if (Rpta.Equals("OK"))
                             {
@@ -315,7 +315,7 @@ namespace Sistema.Presentacion
                         {
                             //Tomamos el ID y ese es el parametro que le enviaremos a nuestro metodo Activar.
                             codigo = Convert.ToInt32(row.Cells[1].Value);
-                            Rpta = NCategoria.Activar(codigo);
+                            Rpta = NArticulo.Activar(codigo);
                             //Si la respuesta es satisfactora (OK) entonces se mostrara un mensaje de informacion
                             if (Rpta.Equals("OK"))
                             {
@@ -362,7 +362,7 @@ namespace Sistema.Presentacion
                         {
                             //Tomamos el ID y ese es el parametro que le enviaremos a nuestro metodo Activar.
                             codigo = Convert.ToInt32(row.Cells[1].Value);
-                            Rpta = NCategoria.Desactivar(codigo);
+                            Rpta = NArticulo.Desactivar(codigo);
                             //Si la respuesta es satisfactora (OK) entonces se mostrara un mensaje de informacion
                             if (Rpta.Equals("OK"))
                             {

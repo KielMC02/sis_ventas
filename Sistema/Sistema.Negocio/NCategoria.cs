@@ -27,6 +27,14 @@ namespace Sistema.Negocio
             return Datos.Buscar(valor);
         }
 
+        public static DataTable Seleccionar()
+        {
+
+            //Llamamos el metodo Listar de la clase Dcategorias
+            DCaregoria Datos = new DCaregoria();
+            return Datos.Seleccionar();
+        }
+
         public static String Insertar (string Nombre, string Descripcion)
         {
             //Llamamos el metodo Insertar de la clase Dcategorias y le enviamos los parametros que espera
