@@ -17,3 +17,5 @@ C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentaci
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.pdb
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmCategoria.resources
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmArticulo.resources
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\BarcodeStandard.dll
+C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\System.Drawing.Common.dll
