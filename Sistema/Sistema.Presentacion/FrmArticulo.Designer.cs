@@ -39,6 +39,10 @@
             this.TxtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.TxtStock = new System.Windows.Forms.TextBox();
+            this.TxtPrecio_Venta = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.PanelCodigo = new System.Windows.Forms.Panel();
             this.BtnGuardarCodigo = new System.Windows.Forms.Button();
             this.BtnGeneralCodigo = new System.Windows.Forms.Button();
@@ -76,7 +80,7 @@
             // 
             // BtnActualizar
             // 
-            this.BtnActualizar.Location = new System.Drawing.Point(439, 344);
+            this.BtnActualizar.Location = new System.Drawing.Point(443, 373);
             this.BtnActualizar.Name = "BtnActualizar";
             this.BtnActualizar.Size = new System.Drawing.Size(75, 23);
             this.BtnActualizar.TabIndex = 8;
@@ -86,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(379, 370);
+            this.label3.Location = new System.Drawing.Point(381, 315);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(182, 13);
             this.label3.TabIndex = 7;
@@ -94,7 +98,7 @@
             // 
             // BtnCancelar
             // 
-            this.BtnCancelar.Location = new System.Drawing.Point(520, 344);
+            this.BtnCancelar.Location = new System.Drawing.Point(524, 373);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
             this.BtnCancelar.TabIndex = 6;
@@ -103,16 +107,17 @@
             // 
             // BtnInsertar
             // 
-            this.BtnInsertar.Location = new System.Drawing.Point(358, 344);
+            this.BtnInsertar.Location = new System.Drawing.Point(362, 373);
             this.BtnInsertar.Name = "BtnInsertar";
             this.BtnInsertar.Size = new System.Drawing.Size(75, 23);
             this.BtnInsertar.TabIndex = 5;
             this.BtnInsertar.Text = "Insertar";
             this.BtnInsertar.UseVisualStyleBackColor = true;
+            this.BtnInsertar.Click += new System.EventHandler(this.BtnInsertar_Click);
             // 
             // TxtId
             // 
-            this.TxtId.Location = new System.Drawing.Point(121, 6);
+            this.TxtId.Location = new System.Drawing.Point(17, 19);
             this.TxtId.Name = "TxtId";
             this.TxtId.Size = new System.Drawing.Size(100, 20);
             this.TxtId.TabIndex = 4;
@@ -144,6 +149,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.TxtStock);
+            this.tabPage2.Controls.Add(this.TxtPrecio_Venta);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.PanelCodigo);
             this.tabPage2.Controls.Add(this.BtnGuardarCodigo);
             this.tabPage2.Controls.Add(this.BtnGeneralCodigo);
@@ -171,6 +180,38 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // TxtStock
+            // 
+            this.TxtStock.Location = new System.Drawing.Point(17, 375);
+            this.TxtStock.Name = "TxtStock";
+            this.TxtStock.Size = new System.Drawing.Size(213, 20);
+            this.TxtStock.TabIndex = 23;
+            // 
+            // TxtPrecio_Venta
+            // 
+            this.TxtPrecio_Venta.Location = new System.Drawing.Point(17, 315);
+            this.TxtPrecio_Venta.Name = "TxtPrecio_Venta";
+            this.TxtPrecio_Venta.Size = new System.Drawing.Size(213, 20);
+            this.TxtPrecio_Venta.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(14, 359);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Stock(*)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 299);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Precio Venta(*)";
             // 
             // PanelCodigo
             // 
@@ -361,6 +402,7 @@
             this.DgvListado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvListado.Size = new System.Drawing.Size(1040, 280);
             this.DgvListado.TabIndex = 0;
+            this.DgvListado.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvListado_CellMouseDoubleClick);
             // 
             // tabPage1
             // 
@@ -394,7 +436,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1074, 450);
+            this.ClientSize = new System.Drawing.Size(995, 450);
             this.Controls.Add(this.TabGeneral);
             this.Name = "FrmArticulo";
             this.Text = "FrmArticulo";
@@ -446,5 +488,9 @@
         private System.Windows.Forms.TextBox TxtCodigo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel PanelCodigo;
+        private System.Windows.Forms.TextBox TxtStock;
+        private System.Windows.Forms.TextBox TxtPrecio_Venta;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

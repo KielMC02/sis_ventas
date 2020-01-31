@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Sistema.Presentacion
         private string RutaOrigen;
         private string RutaDestino;
         private string Directorio = "D:\\Imagen\\";
+        private string NombreAnt;
         public FrmArticulo()
         {
             InitializeComponent();
@@ -90,6 +92,9 @@ namespace Sistema.Presentacion
             TxtId.Clear();
             TxtDescripcion.Clear();
             BtnInsertar.Visible = true;
+            TxtImagen.Clear();
+            TxtStock.Clear();
+            TxtPrecio_Venta.Clear();
             BtnActualizar.Visible = false;
             Erroricono.Clear();
 
@@ -161,6 +166,7 @@ namespace Sistema.Presentacion
 
         private void BtnGeneralCodigo_Click(object sender, EventArgs e)
         {
+            if(TxtCodigo.Text != string.Empty) { 
             //Declaramos un objeto de tipo Barcodelib. Con su clase Barcode.
             BarcodeLib.Barcode Codigo = new BarcodeLib.Barcode();
             //Especificamos que debe inluir el texto debajo del codigo.
@@ -169,6 +175,11 @@ namespace Sistema.Presentacion
             PanelCodigo.BackgroundImage = Codigo.Encode(BarcodeLib.TYPE.CODE128,TxtCodigo.Text,Color.Black,Color.White,213,123);
             //Habilitamos el boton Guardar Codigo
             BtnGuardarCodigo.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Debre ingresar un codigo para poder generarlo", "Error al General Codigo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void BtnGuardarCodigo_Click(object sender, EventArgs e)
@@ -184,6 +195,88 @@ namespace Sistema.Presentacion
                 imgfinal.Save(DialogoGuardar.FileName, ImageFormat.Png);
             }
             imgfinal.Dispose();
+        }
+
+        private void BtnInsertar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Rpta = "";
+                //Validamos que los campos necesarios esten llenos
+                if (CboCategoria.Text == string.Empty || TxtNombre.Text == string.Empty || TxtStock.Text == string.Empty || TxtPrecio_Venta.Text == string.Empty || TxtCodigo.Text == string.Empty || TxtDescripcion.Text ==  string.Empty )
+                {
+                    this.MensajeError("Falta Ingresar Algunos Datos, Seran marcados.");
+                    Erroricono.SetError(CboCategoria, "Ingrese un Categoria.");
+                    Erroricono.SetError(TxtNombre, "Ingrese un Nombre.");
+                    Erroricono.SetError(TxtStock, "Ingrese un Stock.");
+                    Erroricono.SetError(TxtPrecio_Venta, "Ingrese un Precio de Venta.");
+                    Erroricono.SetError(TxtCodigo, "Ingrese un Codigo de Barras.");
+                    Erroricono.SetError(TxtDescripcion, "Ingrese una descripcion.");
+                }
+                //En caso de que no Ejecutamos el metodo Insertar
+                else
+                {
+                    Rpta = NArticulo.Insertar(Convert.ToInt32(CboCategoria.SelectedValue), TxtCodigo.Text.Trim(),TxtNombre.Text.Trim(),Convert.ToDecimal(TxtPrecio_Venta.Text.Trim()), Convert.ToInt32(TxtStock.Text.Trim()), TxtDescripcion.Text.Trim(), TxtImagen.Text.Trim());
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.MensajeOK("Articulo Creada Exitosamente");
+                        if (TxtImagen.Text != string.Empty)
+                        {
+                            RutaDestino = this.Directorio + TxtImagen.Text;
+                            File.Copy(this.RutaOrigen, RutaDestino);
+                        }
+                        this.Limpiar();
+                        this.Listar();
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void DgvListado_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+
+                this.Limpiar();
+                BtnActualizar.Visible = true;
+                BtnInsertar.Visible = false;
+                /*Obtenemos el Id del registro seleccionado*/
+                TxtId.Text = Convert.ToString(DgvListado.CurrentRow.Cells["ID"].Value);
+                CboCategoria.SelectedValue = Convert.ToString(DgvListado.CurrentRow.Cells["idcategoria"].Value);
+                TxtCodigo.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Codigo"].Value);
+                this.NombreAnt = Convert.ToString(DgvListado.CurrentRow.Cells["Nombre"].Value);
+                TxtNombre.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Nombre"].Value);
+                TxtPrecio_Venta.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Precio_Venta"].Value);
+                TxtStock.Text =  Convert.ToString(DgvListado.CurrentRow.Cells["Stock"].Value);
+                TxtDescripcion.Text =  Convert.ToString(DgvListado.CurrentRow.Cells["Descripcion"].Value);
+                string Imagen;
+                Imagen = Convert.ToString(DgvListado.CurrentRow.Cells["Imagen"].Value);
+                if(Imagen != string.Empty)
+                {
+                    PicImagen.Image = Image.FromFile(this.Directorio + Imagen);
+                    TxtImagen.Text = Imagen;
+                }
+                else
+                {
+                    PicImagen.Image = null;
+                    TxtImagen.Text = "";
+                }
+                TabGeneral.SelectedIndex = 1;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Seleccione desde la celda nombre." + "| Error: " + ex.Message);
+            }
         }
     }
 }

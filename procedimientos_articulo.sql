@@ -5,7 +5,7 @@ as
 select  a.idarticulo as ID, a.idcategoria, c.nombre as Categoria,
 a.codigo as Codigo, a.nombre as Nombre, a.precio_venta as Precio_Venta,
 a.stock as Stock, a.descripcion as Descripcion, a.imagen as Imagen, a.estado as Estado
-from articulo a inner join categoria c on a.idarticulo=c.idcategoria
+from articulo a inner join categoria c on a.idcategoria=c.idcategoria
 order by a.idarticulo desc
 exec articulo_listar
 go

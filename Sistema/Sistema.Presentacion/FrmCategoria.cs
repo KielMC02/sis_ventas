@@ -267,7 +267,7 @@ namespace Sistema.Presentacion
                         {
                             //Tomamos el ID y ese es el parametro que le enviaremos a nuestro metodo Eliminar.
                             codigo = Convert.ToInt32(row.Cells[1].Value);
-                            Rpta = NArticulo.Eliminar(codigo);
+                            Rpta = NCategoria.Eliminar(codigo);
                             //Si la respuesta es satisfactora (OK) entonces se mostrara un mensaje de informacion
                             if (Rpta.Equals("OK"))
                             {
@@ -299,7 +299,7 @@ namespace Sistema.Presentacion
             {
                 //Creamos un mensaje de dailogo con las opciones necesarias
                 DialogResult Opcion;
-                //Mostramos el mensaje  y establecemos la opciones OK(para continuar)- Cancel(Para Cancelar), establecemos que es de tipo Cuestion
+                //Mostramos el mensaje  y establecemos la opciones OK(para continuar)- Cancel(Para Cancelar), establecemos que es de tipo Question(Pregunta)
                 Opcion = MessageBox.Show("Realmente deseas Activar el(los) registro?", "Sistema de Eventos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 //Si la Opcion es OK
                 if (Opcion == DialogResult.OK)
@@ -315,7 +315,7 @@ namespace Sistema.Presentacion
                         {
                             //Tomamos el ID y ese es el parametro que le enviaremos a nuestro metodo Activar.
                             codigo = Convert.ToInt32(row.Cells[1].Value);
-                            Rpta = NArticulo.Activar(codigo);
+                            Rpta = NCategoria.Activar(codigo);
                             //Si la respuesta es satisfactora (OK) entonces se mostrara un mensaje de informacion
                             if (Rpta.Equals("OK"))
                             {
@@ -346,7 +346,7 @@ namespace Sistema.Presentacion
             {
                 //Creamos un mensaje de dailogo con las opciones necesarias
                 DialogResult Opcion;
-                //Mostramos el mensaje  y establecemos la opciones OK(para continuar)- Cancel(Para Cancelar), establecemos que es de tipo Cuestion
+                //Mostramos el mensaje  y establecemos la opciones OK(para continuar)- Cancel(Para Cancelar), establecemos que es de tipo Question(Pregunta)
                 Opcion = MessageBox.Show("Realmente deseas Desactivar el(los) registro?", "Sistema de Eventos", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 //Si la Opcion es OK
                 if (Opcion == DialogResult.OK)
@@ -362,11 +362,11 @@ namespace Sistema.Presentacion
                         {
                             //Tomamos el ID y ese es el parametro que le enviaremos a nuestro metodo Activar.
                             codigo = Convert.ToInt32(row.Cells[1].Value);
-                            Rpta = NArticulo.Desactivar(codigo);
+                            Rpta = NCategoria.Desactivar(codigo);
                             //Si la respuesta es satisfactora (OK) entonces se mostrara un mensaje de informacion
                             if (Rpta.Equals("OK"))
                             {
-                                this.MensajeOK("Se Desactivar el Registro" + Convert.ToString(row.Cells[2].Value));
+                                this.MensajeOK("Se Desactivo el Registro " + Convert.ToString(row.Cells[2].Value));
                             }
                             //En caso de que no mostrar el error.
                             else

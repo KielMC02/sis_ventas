@@ -154,7 +154,7 @@ namespace Sistema.Datos
             {
                 //Como la clase y el metodo de la conexion son privados entonces hay que llamar primero al metodo publico "getInstance", junto con el metodo de la conexion  "CrearConexion".
                 Sqlcon = Conexion.getInstance().CrearConexion();
-                //Utilizamos una variable de Tipo SqlCommand "Comando" la cual recibe el objeto la que haremos referencia en nuestra base de datos en este caso  es un StoredProcedure(Procediiento de almacenado) y tambien recibe la conexiona a la base de datos en este caso esa en "Sqlcon".
+                //Utilizamos una variable de Tipo SqlCommand "Comando" la cual recibe el objeto la que haremos referencia en nuestra base de datos en este caso  es un StoredProcedure(Procediiento de almacenado) y tambien recibe la conexion a la base de datos en este caso esta en "Sqlcon".
                 //La Clase SqlCommando representa una instruccion o una Transaccion SQL.
                 SqlCommand Comando = new SqlCommand("articulo_insertar", Sqlcon);
                 //Ejecutamos el metodo ComandType de la variable comando para indicarle que va ejecutar un Procedimiento de Almacenado
