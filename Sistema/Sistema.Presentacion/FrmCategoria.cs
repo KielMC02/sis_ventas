@@ -217,6 +217,7 @@ namespace Sistema.Presentacion
 
         private void ChkSeleccionar_CheckedChanged(object sender, EventArgs e)
         {
+            //Utilizamos el estado del Checkbox seleccionar para habilitar o Deshabilitar Botones
             if (ChkSeleccionar.Checked)
             {
                 DgvListado.Columns[0].Visible = true;
