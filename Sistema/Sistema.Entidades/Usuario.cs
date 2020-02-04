@@ -8,9 +8,10 @@ namespace Sistema.Entidades
 {
     public class Usuario
     {
-        public int id {get; set;}
+        public int idusuario { get; set; }
+        public int idrol {get; set;}
         public string nombre { get; set; }
-        string tipo_documento { get; set; }
+        public string tipo_documento { get; set; }
         public string NumDocumento { get; set; }
         public string Direccion { get; set; }
         public string Telefono { get; set; }
