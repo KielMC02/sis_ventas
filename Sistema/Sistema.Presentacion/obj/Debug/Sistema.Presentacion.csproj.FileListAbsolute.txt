@@ -20,3 +20,4 @@ C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentaci
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\BarcodeStandard.dll
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\System.Drawing.Common.dll
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmRol.resources
+C:\Users\ewin mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmUsuario.resources

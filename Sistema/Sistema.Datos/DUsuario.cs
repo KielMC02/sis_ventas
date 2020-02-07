@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Sistema.Datos
 {
-    class DUsuario
+   public class DUsuario
     {
-        //Esta funcion nos va devolver un objeto de tipo datatable ya que mostrata los datos de una tabla
+        //Esta funcion nos va devolver un objeto de tipo datatable ya que mostrara los datos de una tabla
         public DataTable Listar()
         {
-            //Data reader nos ayuda a leer una secuencias de filas en Sql SERVER
+            //DataReader nos ayuda a leer una secuencias de filas en Sql SERVER
             SqlDataReader Resultado;
             //La calse datatable representa una tabla en memoria
             DataTable Tabla = new DataTable();
