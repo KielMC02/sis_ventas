@@ -153,7 +153,7 @@ namespace Sistema.Presentacion
             //Aqui establecemos que tipo de archivos va manejaar nuestra aplicacion
             file.Filter = "Image files (*.jpg,*.jpeg, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png;";
             // En caso de que el usuario cargue un archivo del tipo permitido
-            if (file.ShowDialog() == DialogResult.OK) ;
+            if (file.ShowDialog() == DialogResult.OK)
             {
                 //Cargamos la imagen al picturebox con la variable PicImagen
                 PicImagen.Image = Image.FromFile(file.FileName);
@@ -514,6 +514,11 @@ namespace Sistema.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
 
             }
+        }
+
+        private void CboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

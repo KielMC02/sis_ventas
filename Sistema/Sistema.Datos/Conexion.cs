@@ -21,7 +21,7 @@ namespace Sistema.Datos
         {
             //Inicializamos todos los Atributos de la Clase
             this.Base = "dbsistema";
-            this.Servidor = "DKPR8Z1";
+            this.Servidor = "DESKTOP-E83NLPV";
             this.Usuario = "";
             this.Clave = "";
             this.Seguridad = true;

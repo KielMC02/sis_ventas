@@ -9,3 +9,13 @@ C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\ob
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.csproj.CopyComplete
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.dll
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\bin\Debug\Sistema.Negocio.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\bin\Debug\Sistema.Negocio.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\bin\Debug\Sistema.Datos.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\bin\Debug\Sistema.Entidades.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\bin\Debug\Sistema.Datos.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\bin\Debug\Sistema.Entidades.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.csprojAssemblyReference.cache
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.csproj.CopyComplete
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Negocio\obj\Debug\Sistema.Negocio.pdb

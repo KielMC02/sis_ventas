@@ -21,3 +21,25 @@ C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentaci
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\System.Drawing.Common.dll
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmRol.resources
 C:\Users\ewin mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmUsuario.resources
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\Sistema.Presentacion.exe.config
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\Sistema.Presentacion.exe
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\Sistema.Presentacion.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\BarcodeStandard.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\Sistema.Negocio.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\System.Drawing.Common.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\Sistema.Datos.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\Sistema.Entidades.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\Sistema.Negocio.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\Sistema.Datos.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\bin\Debug\Sistema.Entidades.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.csprojAssemblyReference.cache
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmArticulo.resources
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmCategoria.resources
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmPrincipal.resources
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmRol.resources
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FrmUsuario.resources
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.Properties.Resources.resources
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.csproj.GenerateResource.cache
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.csproj.CopyComplete
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.exe
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.pdb

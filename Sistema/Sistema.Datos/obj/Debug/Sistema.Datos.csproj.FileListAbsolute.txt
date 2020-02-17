@@ -7,3 +7,11 @@ C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CopyComplete
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.dll
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\bin\Debug\Sistema.Datos.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\bin\Debug\Sistema.Datos.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\bin\Debug\Sistema.Entidades.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\bin\Debug\Sistema.Entidades.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.csprojAssemblyReference.cache
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.csproj.CopyComplete
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Datos\obj\Debug\Sistema.Datos.pdb

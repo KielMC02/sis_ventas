@@ -3,3 +3,8 @@ C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Entidades\
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.csproj.CoreCompileInputs.cache
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.dll
 C:\Users\ewin mendez\source\repos\KielMC02\sis_ventas\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Entidades\bin\Debug\Sistema.Entidades.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Entidades\bin\Debug\Sistema.Entidades.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.csprojAssemblyReference.cache
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.dll
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Entidades\obj\Debug\Sistema.Entidades.pdb
