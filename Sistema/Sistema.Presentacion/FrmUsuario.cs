@@ -13,6 +13,7 @@ namespace Sistema.Presentacion
 {
     public partial class FrmUsuario : Form
     {
+        private string emailant;
         public FrmUsuario()
         {
             InitializeComponent();
@@ -81,7 +82,11 @@ namespace Sistema.Presentacion
             TxtBuscar.Clear();
             TxtNombre.Clear();
             TxtId.Clear();
-            TxtDescripcion.Clear();
+            TxtNumeroDocumento.Clear();
+            TxtEmail.Clear();
+            TxtDireccion.Clear();
+            TxtTelefono.Clear();
+            TxtClave.Clear();
             BtnInsertar.Visible = true;
             BtnActualizar.Visible = false;
             Erroricono.Clear();
@@ -133,5 +138,123 @@ namespace Sistema.Presentacion
             this.Buscar();
         }
 
+        //Boton para insertar registro
+        private void BtnInsertar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Rpta = "";
+                //Validamos que los campos necesarios esten llenos
+                if (CboRol.Text == string.Empty ||  TxtNombre.Text == string.Empty || CboTipoDocumento.Text == string.Empty || TxtNumeroDocumento.Text == string.Empty || TxtTelefono.Text == string.Empty || TxtDireccion.Text == string.Empty || TxtDireccion.Text == string.Empty || TxtEmail.Text == string.Empty || TxtClave.Text == string.Empty)
+                {
+                    this.MensajeError("Falta Ingresar Algunos Datos, Seran marcados.");
+                    Erroricono.SetError(CboRol, "Ingrese un Rol.");
+                    Erroricono.SetError(TxtNombre, "Ingrese un nombre.");
+                    Erroricono.SetError(CboTipoDocumento, "Ingrese un tipo de documento.");
+                    Erroricono.SetError(TxtNumeroDocumento, "Ingrese un numero de documento.");
+                    Erroricono.SetError(TxtTelefono, "Ingrese un numero de telefono.");
+                    Erroricono.SetError(TxtDireccion, "Ingrese una Direecion");
+                    Erroricono.SetError(TxtEmail, "Ingrese un Email");
+                    Erroricono.SetError(TxtClave, "Ingrese una Clave.");
+                }
+                //En caso de que no Ejecutamos el metodo Insertar
+                else
+                {
+                    
+                    Rpta = NUsuario.Insertar(Convert.ToInt32(CboRol.SelectedValue), TxtNombre.Text.Trim(), CboTipoDocumento.Text.Trim(), TxtNumeroDocumento.Text.Trim(), TxtDireccion.Text.Trim(), TxtTelefono.Text.Trim(), TxtEmail.Text.Trim(),TxtClave.Text.Trim());
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.MensajeOK("Usuario Creado Exitosamente");
+                        this.Listar();
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void DgvListado_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                this.Limpiar();
+                BtnActualizar.Visible = true;
+                BtnInsertar.Visible = false;
+                /*Obtenemos la informacion de cada celda (registro) y se lo asignamos a su respectivo textbox para poder editarlo*/
+                TxtId.Text = Convert.ToString(DgvListado.CurrentRow.Cells["ID"].Value);
+                CboRol.SelectedValue = Convert.ToString(DgvListado.CurrentRow.Cells["idrol"].Value);
+                TxtNombre.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Nombre"].Value);
+                //this.NombreAnt = Convert.ToString(DgvListado.CurrentRow.Cells["Nombre"].Value);
+                CboTipoDocumento.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Tipo_Documento"].Value);
+                TxtNumeroDocumento.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Numero_Documento"].Value);
+                TxtDireccion.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Direccion"].Value);
+                TxtTelefono.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Telefono"].Value);
+                this.emailant = Convert.ToString(DgvListado.CurrentRow.Cells["Email"].Value);
+                TxtEmail.Text = Convert.ToString(DgvListado.CurrentRow.Cells["Email"].Value);
+                TabGeneral.SelectedIndex = 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Seleccione desde la celda nombre." + "| Error: " + ex.Message);
+            }
+        }
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Rpta = "";
+                //Validamos que los campos necesarios esten llenos
+                if (CboRol.Text == string.Empty || TxtNombre.Text == string.Empty || CboTipoDocumento.Text == string.Empty || TxtNumeroDocumento.Text == string.Empty || TxtTelefono.Text == string.Empty || TxtDireccion.Text == string.Empty || TxtDireccion.Text == string.Empty || TxtEmail.Text == string.Empty)
+                {
+                    this.MensajeError("Falta Ingresar Algunos Datos, Seran marcados.");
+                    Erroricono.SetError(CboRol, "Ingrese un Rol.");
+                    Erroricono.SetError(TxtNombre, "Ingrese un nombre.");
+                    Erroricono.SetError(CboTipoDocumento, "Ingrese un tipo de documento.");
+                    Erroricono.SetError(TxtNumeroDocumento, "Ingrese un numero de documento.");
+                    Erroricono.SetError(TxtTelefono, "Ingrese un numero de telefono.");
+                    Erroricono.SetError(TxtDireccion, "Ingrese una Direecion");
+                    Erroricono.SetError(TxtEmail, "Ingrese un Email");
+
+                }
+                //En caso de que no Ejecutamos el metodo Insertar
+                else
+                {
+
+                    Rpta = NUsuario.Actualizar(Convert.ToInt32(TxtId.Text),Convert.ToInt32(CboRol.SelectedValue), TxtNombre.Text.Trim(), CboTipoDocumento.Text.Trim(), TxtNumeroDocumento.Text.Trim(), TxtDireccion.Text.Trim(), TxtTelefono.Text.Trim(), this.emailant,TxtEmail.Text.Trim(), TxtClave.Text.Trim());
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.MensajeOK("Usuario Actulizado Exitosamente");
+                        this.Listar();
+                    }
+                    else
+                    {
+                        this.MensajeError(Rpta);
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
+        }
+
+        private void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Limpiar();
+            this.Close();
+        }
     }
 }

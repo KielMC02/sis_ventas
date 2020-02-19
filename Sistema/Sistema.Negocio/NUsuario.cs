@@ -56,14 +56,14 @@ namespace Sistema.Negocio
 
         }
 
-        public static String Actualizar(int Idusuario, int Idrol,string NombreAnt, string Nombre, string tipo_documento, string num_documento, string direccion, string telefono, string email, string clave)
+        public static String Actualizar(int Idusuario, int Idrol, string Nombre, string tipo_documento, string num_documento, string direccion,string emailant, string telefono, string email, string clave)
         {
             //Llamamos el metodo Actualizar de la clase Dcategorias y le enviamos los parametros que espera
             DUsuario Datos = new DUsuario();
             Usuario Obj = new Usuario();
 
             //Si la variable nombre anterior es igual al string nombre, entonces el usuario modifico los otros campos menos el nombre
-            if (NombreAnt.Equals(Nombre))
+            if (emailant.Equals(email))
             {
                 
                 Obj.idusuario = Idusuario;
@@ -81,7 +81,7 @@ namespace Sistema.Negocio
             else
             {
                 //Validamos que no exista una categoria con el mismo nombre
-                string Existe = Datos.Existe(Nombre);
+                string Existe = Datos.Existe(email);
                 if (Existe.Equals("1"))
                 {
                     return "Ya existe un Usuario con este nombre";

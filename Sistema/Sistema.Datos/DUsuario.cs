@@ -159,8 +159,8 @@ namespace Sistema.Datos
                 //Ejecutamos el metodo ComandType de la variable comando para indicarle que va ejecutar un Procedimiento de Almacenado
                 Comando.CommandType = CommandType.StoredProcedure;
                 //Le enviamos los valores que esta esperando el Procedimiento de almacenado en la base de datos.
-                Comando.Parameters.Add("@idrol", SqlDbType.VarChar).Value = Obj.idrol;
-                Comando.Parameters.Add("@nombre", SqlDbType.Int).Value = Obj.nombre;
+                Comando.Parameters.Add("@idrol", SqlDbType.Int).Value = Obj.idrol;
+                Comando.Parameters.Add("@nombre", SqlDbType.VarChar).Value = Obj.nombre;
                 Comando.Parameters.Add("@tipo_documento", SqlDbType.VarChar).Value = Obj.tipo_documento;
                 Comando.Parameters.Add("@num_documento", SqlDbType.VarChar).Value = Obj.NumDocumento;
                 Comando.Parameters.Add("@direccion", SqlDbType.VarChar).Value = Obj.Direccion;

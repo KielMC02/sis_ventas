@@ -10,11 +10,11 @@ namespace Sistema.Negocio
 {
    public class NRol
     {
-        //Creamos las funciones acordes a los metodos de la Clase Dcategoria
+        //Creamos las funciones acordes a los metodos de la Clase Drol.
         public static DataTable Listar()
         {
 
-            //Llamamos el metodo Listar de la clase Dcategorias
+            //Llamamos el metodo Listar de la clase Drol.
             DRol Datos = new DRol();
             return Datos.Listar();
         }
