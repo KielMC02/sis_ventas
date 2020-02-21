@@ -24,9 +24,16 @@ namespace Sistema.Negocio
 
         public static DataTable Buscar(string valor)
         {
-            //Llamamos el metodo buscar de la clase Dcategorias y le enviamos el parametro que espera
+            //Llamamos el metodo buscar de la clase DUsario y le enviamos el parametro que espera
             DUsuario Datos = new DUsuario();
             return Datos.Buscar(valor);
+        }
+
+        public static DataTable Login(string email,string clave)
+        {
+            //Llamamos el metodo Login de la clase DUsuario y le enviamos el parametro que espera
+            DUsuario Datos = new DUsuario();
+            return Datos.Login(email,clave);
         }
 
         public static String Insertar(int Idrol,string Nombre, string tipo_documento, string num_documento, string direccion, string telefono, string email, string clave)

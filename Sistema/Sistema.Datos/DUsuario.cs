@@ -99,6 +99,53 @@ namespace Sistema.Datos
                 if (Sqlcon.State == ConnectionState.Open) Sqlcon.Close();
             }
         }
+        //Funcion Login
+        public DataTable Login(string email, string clave)
+        {
+            //Data reader nos ayuda a leer una secuencias de filas en Sql SERVER
+            SqlDataReader Resultado;
+            //La calse datatable representa una tabla en memoria
+            DataTable Tabla = new DataTable();
+            SqlConnection Sqlcon = new SqlConnection();
+
+            //Se ejecuta el codigo que queremos
+            try
+            {
+                //Como la clase y el metodo de la conexion son privados entonces hay que llamar primero al metodo publico "getInstance", junto con el metodo de la conexion  "CrearConexion".
+                Sqlcon = Conexion.getInstance().CrearConexion();
+                //Utilizamos una variable de Tipo SqlCommand "Comando" la cual recibe el objeto la que haremos referencia en nuestra base de datos en este caso es un StoredProcedure(Procediiento de lamacenado) y tambien recibe la conexiona a la base de datos en este caso esa en "Sqlcon".
+                //La Clase SqlCommando representa una instruccion o una Transaccion SQL.
+                SqlCommand Comando = new SqlCommand("usuario_Login", Sqlcon);
+                //Ejecutamos el metodo ComandType de la variable comando para indicarle que ba ejecutar un Procedimiento de Almacenado
+                Comando.CommandType = CommandType.StoredProcedure;
+                //Le enviamos el valor que esta esperando el procedimiento de almacenado.... Utilizamos Parameters para indicar que es un parametro,"@valor" el nombre con el que recibira ese Parametro, el tipo de dato y de donde lo va recibir "valor"
+                Comando.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
+                Comando.Parameters.Add("@clave", SqlDbType.VarChar).Value = clave;
+                //Abrimos la Conexion
+                Sqlcon.Open();
+                //Almacenamos Dentro de la variable Resultado el resultado del procedimiento de almacenado
+                Resultado = Comando.ExecuteReader();
+                //La variable Tabla se carga con resultado
+                Tabla.Load(Resultado);
+                //Retornamos la tabla
+                return Tabla;
+
+            }
+            //Controlamos el error producido
+            catch (Exception ex)
+            {
+                //Muestra la excepcion
+                return null;
+                throw ex;
+
+            }
+            //Este codigo siempre se ejecuta
+            finally
+            {
+                //En caso de que la conexion este abierta sera cerrada
+                if (Sqlcon.State == ConnectionState.Open) Sqlcon.Close();
+            }
+        }
 
         //El Metodo Existe de la Clase DArticulo, se encarga de evitar que no existan categorias con el mismo nombre
         public string Existe(string valor)

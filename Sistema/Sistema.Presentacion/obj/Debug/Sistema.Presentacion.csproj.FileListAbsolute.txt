@@ -43,3 +43,4 @@ C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.P
 C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.csproj.CopyComplete
 C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.exe
 C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.pdb
+C:\Users\Ewin Ezequiel Mendez\Source\Repos\KielMC02\sis_ventas\Sistema\Sistema.Presentacion\obj\Debug\Sistema.Presentacion.FRMLogin.resources

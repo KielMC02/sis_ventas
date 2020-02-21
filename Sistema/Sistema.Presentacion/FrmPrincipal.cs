@@ -13,7 +13,11 @@ namespace Sistema.Presentacion
     public partial class FrmPrincipal : Form
     {
         private int childFormNumber = 0;
-
+        public int IdUsuario;
+        public int Idrol;
+        public string Rol;
+        public string Nombre;
+        public bool Estado;
         public FrmPrincipal()
         {
             InitializeComponent();
@@ -138,6 +142,11 @@ namespace Sistema.Presentacion
             FrmUsuario frm = new FrmUsuario();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
