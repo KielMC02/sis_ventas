@@ -146,7 +146,48 @@ namespace Sistema.Presentacion
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            //Establecemos los diferentes roles por Usuario
+            StBarraInferior.Text = "Desarrollado por Ewin Mendez, Usuario: " + Nombre + " Rol: " + Rol;
+            if (this.Rol.Equals("Administrador"))
+            {
+                MnuAlmacen.Enabled = true;
+                MnuIngresos.Enabled = true;
+                MnuVentas.Enabled = true;
+                MnuAccesos.Enabled = true;
+                MnuConsultas.Enabled = true;
+                TsCompras.Enabled = true;
+                TsVentas.Enabled = true;
+            }
+            else if (this.Rol.Equals("Vendedor"))
+            {
+                MnuAlmacen.Enabled = false;
+                MnuIngresos.Enabled = true;
+                MnuVentas.Enabled = true;
+                MnuAccesos.Enabled = false;
+                MnuConsultas.Enabled = true;
+                TsCompras.Enabled = false;
+                TsVentas.Enabled = true;
+            }
+            else if (this.Rol.Equals("Almacenero"))
+            {
+                MnuAlmacen.Enabled = true;
+                MnuIngresos.Enabled = true;
+                MnuVentas.Enabled = false;
+                MnuAccesos.Enabled = false;
+                MnuConsultas.Enabled = true;
+                TsCompras.Enabled = true;
+                TsVentas.Enabled = false;
+            }
+            else
+            {
+                MnuAlmacen.Enabled = false;
+                MnuIngresos.Enabled = false;
+                MnuVentas.Enabled = false;
+                MnuAccesos.Enabled = false;
+                MnuConsultas.Enabled = false;
+                TsCompras.Enabled = false;
+                TsVentas.Enabled = false;
+            }
         }
     }
 }
