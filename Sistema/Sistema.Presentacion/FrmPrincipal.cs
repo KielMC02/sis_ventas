@@ -189,5 +189,20 @@ namespace Sistema.Presentacion
                 TsVentas.Enabled = false;
             }
         }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult Opcion = new DialogResult();
+            Opcion = MessageBox.Show("Deseas salir del sistema?", "Sistema de Ventas", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(Opcion == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
